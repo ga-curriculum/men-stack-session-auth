@@ -1,4 +1,4 @@
-# ![[tktk Module Name] - References](./assets/hero.png)
+# ![Mongoose, Express, EJS, and Session Auth - References](./assets/hero.png)
 
 ## Lesson references
 
