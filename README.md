@@ -32,10 +32,11 @@ tktk Write a short but descriptive summary of the content in this module.
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [Saving Sessions in MongoDB](./level-up/saving-sessions-in-mongodb.md)               | -- | -- | tktk skills covered |
-| [Sign In on Sign Up](./level-up/sign-in-on-sign-up.md)                               | -- | -- | tktk skills covered |
-| [Protecting Routes with Middleware](./level-up/protecting-routes-with-middleware.md) | -- | -- | tktk skills covered |
-| **Total Level Up content**                                                           | -- | -- |                     |
+| [Saving Sessions in MongoDB](./level-up/saving-sessions-in-mongodb.md)                                         | -- | -- | tktk skills covered |
+| [Sign In on Sign Up](./level-up/sign-in-on-sign-up.md)                                                         | -- | -- | tktk skills covered |
+| [Protecting Routes with Middleware](./level-up/protecting-routes-with-middleware.md)                           | -- | -- | tktk skills covered |
+| [Making the User Session Available to All Views](./level-up/making-the-user-session-available-to-all-views.md) | -- | -- | tktk skills covered |
+| **Total Level Up content**                                                                                     | -- | -- |                     |
 
 ## References
 
