@@ -8,11 +8,11 @@ Open your Terminal application and navigate to your `~/code/ga/lectures` directo
 cd `~/code/ga/lectures`
 ```
 
-Make a new directory called `tktk`, then enter this directory:
+Make a new directory called `express-auth`, then enter this directory:
 
 ```bash
-mkdir tktk
-cd tktk
+mkdir express-auth
+cd express-auth
 ```
 
 In this directory create a `server.js` file:
