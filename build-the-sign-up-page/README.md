@@ -1,9 +1,73 @@
 # ![Mongoose, Express, EJS, and Session Auth - Build the Sign Up Page](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to create a sign up page with a form allowing the creation of new users.
 
-tktk Notes: Build the Sign Up page. Add UI from the landing page that will go to the sign up page. Use the new `auth.js` controller. Add new `auth` directory in the `views` directory. Add `views/auth/sign-up.ejs` file. We'll build the form, but it won't have a method or action at this stage.
+## Create the Sign Up Page
 
-[tktk Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-start)
+To begin our authentication journey, we will need to be able to create new user accounts. Let's start by creating the template with the form to be submitted for creating an account.
 
-[tktk Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-complete)
+```bash
+mkdir views/auth
+touch views/auth/sign-up.ejs
+```
+
+This template will have a simple form, like so:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+</head>
+<body>
+  <h1>Create a new account!</h1>
+  <form action="" method="">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" />
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" />
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" name="confirmPassword" id="confirmPassword" />
+    <button type="submit">Sign up</button>
+  </form>
+</body>
+</html>
+```
+
+Note the use of `type="password"` on our password input. This results in the classic hidden text, replaced by dots, that all password inputs should have across all applications.
+
+We've also set up a `confirmPassword` field to ensure users aren't the victims of typos when creating their new account. These fields will have to match before we create their account, and we'll be checking for that, among other things, in the controller file!
+
+## Adding a Navigation Link to the Landing Page
+
+This is a good time to add a simple link to our landing page so a new user can directly navigate to the sign up page:
+
+In `views/index.ejs`:
+
+```html
+<a href="/auth/sign-up">Sign up</a>
+```
+
+## Creating the route
+
+Now that our authentication routes are going to be defined in a separate controller file, we can add the following to `controllers/auth.js`:
+
+```javascript
+router.get('/sign-up', (req, res) => {
+  res.render('auth/sign-up.ejs');
+});
+```
+
+Remember, we're using a `router` object defined by express instead of the `app` object we're used to, so all the routes should be defined with `router` instead of `app`. 
+
+## Test the Route
+
+To test the route, visit `localhost:3000/auth/sign-up` in your browser. The `server.js` file handles the `/auth` section of the url, and the `sign-up` is handled by the controller function we just wrote!
+
+You should see the form rendered in the browser.
+
+[Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-start)
+
+[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-complete)
