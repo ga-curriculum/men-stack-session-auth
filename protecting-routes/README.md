@@ -1,9 +1,59 @@
 # ![Mongoose, Express, EJS, and Session Auth - Protecting Routes](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to implement controller logic to protect a route in express.
 
-tktk Notes: Add a link visible to users and guests on the landing page and corresponding route demonstrating how to handle a guest accessing a route that should only be exposed to users.
+## Protecting Routes
 
-[tktk Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/protecting-routes-start)
+In many web applications, you aren't able to see any of the good stuff until you're a logged in user. Most sites also don't want to allow you to create things in their database as an unauthenticated user, so they'll prevent you from ever reaching a form to do so. We can refer to this concept as **protecting routes** from unauthenticated users.
 
-[tktk Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/protecting-routes-complete)
+There are many ways to implement this concept, and for our application, we'll stick with the most straightforward approach of using an `if` check to determine if there's a user attached to a given request.
+
+## The VIP Lounge
+
+To practice this concept, we'll add a special route just for signed in users to access: the VIP Lounge. We'll present this link to every user on the landing page, but if you're not signed in, the controller function will send you a discouraging message rejecting you from the club. If you **are** signed in, we'll give the user a simple `res.send` message greeting them to the VIP lounge: no need to over-complicate this example.
+
+Let's start by adding the enticing VIP lounge anchor tag to the landing page, outside of any conditionals.
+
+In `views/index.ejs`:
+
+```html
+<p><a href="/vip-lounge">Get into the VIP Users Only lounge!</a></p>
+```
+
+We can now create the route handler for the `/vip-lounge` request, and since this route won't need to be re-used in future applications like our other auth routes, let's just add it to `server.js`.
+
+In `server.js`:
+
+```javascript
+app.get('/vip-lounge', (req, res) => {
+  if (req.session.user) {
+    res.send(`Welcome to the party ${req.session.user.username}.`);
+  } else {
+    res.send('Sorry, no guests allowed.');
+  }
+});
+```
+
+Note the clean, simplistic `if` check that relies on the truthiness of the `req.session.user` value. The `req.session.destroy` method would have eliminated any properties on the `session` object, so if the user has signed out, this property won't exist.
+
+You should now be able to test this route as a signed in user and as an anonymous guest to confirm both responses.
+
+## Real Applications of Protected Routes
+
+Protected routes are common to nearly all web applications, and serve a number of different functions:
+
+1. Hide personal content, like profile pages, from anyone but the profile's owner
+1. Refuse the creation, updating, and deleting of resources to unauthenticated users
+1. Only allow a post's creator to edit or delete that post
+
+Many functions of protected routes are related to **authorization** in addition to **authentication**, which sound very similar, but have a key difference:
+
+**Authentication** confirms that you are who you say you are. The app recognizes you.
+
+**Authorization** confirms that you are allowed to do something specific. The app lets you do something because of who you are.
+
+Simply put, being a signed-in user doesn't give you total power over everything in application, and we rely on the logic of protected routes to allow users to manage their specific resources, without letting them mess with everyone else's.
+
+[Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/protecting-routes-start)
+
+[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/protecting-routes-complete)
