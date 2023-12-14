@@ -19,9 +19,9 @@ Now, we need to create the controller function handling this request. Let's star
 In `controllers/auth.ejs`:
 
 ```javascript
-router.post('/sign-up', async (req, res)=>{
-    res.send('Form submission accepted!')
-})
+router.post('/sign-up', async (req, res) => {
+  res.send('Form submission accepted!');
+});
 ```
 
 Since we want this route to create a new User in the database, we'll first need to import the model into this file:
@@ -45,7 +45,7 @@ Inside the route handler function:
 ```javascript
 const userInDatabase = await User.findOne({ username: req.body.username });
 if (userInDatabase) {
-    return res.send('Username already taken.');
+  return res.send('Username already taken.');
 }
 ```
 
@@ -57,7 +57,7 @@ Inside the route handler function, below the previous validation:
 
 ```javascript
 if (req.body.password !== req.body.confirmPassword) {
-    return res.send('Password and Confirm Password must match');
+  return res.send('Password and Confirm Password must match');
 }
 ```
 

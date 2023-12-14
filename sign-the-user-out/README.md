@@ -33,7 +33,7 @@ In `/controllers/auth.js`:
 
 ```javascript
 router.get('/sign-out', (req, res) => {
-  res.send('The user wants out!')
+  res.send('The user wants out!');
 });
 ```
 

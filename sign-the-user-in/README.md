@@ -12,8 +12,8 @@ In `controllers/auth.js`:
 
 ```javascript
 router.post('/sign-in', async (req, res) => {
-    res.send('Request to sign in received!')
-})
+  res.send('Request to sign in received!');
+});
 ```
 
 ## Confirming a User Exists
@@ -25,8 +25,8 @@ Inside the route handler function:
 ```javascript
 const userInDatabase = await User.findOne({ username: req.body.username });
 if (!userInDatabase) {
-    return res.send('Login failed. Please try again.');
-}
+  return res.send('Login failed. Please try again.');
+};
 ```
 
 ## bCrypt's Comparison Function
@@ -37,11 +37,11 @@ Beneath the previous validation:
 
 ```javascript
 const validPassword = bcrypt.compareSync(
-    req.body.password,
-    userInDatabase.password
+  req.body.password,
+  userInDatabase.password
 );
 if (!validPassword) {
-    return res.send('Login failed. Please try again.');
+  return res.send('Login failed. Please try again.');
 }
 ```
 
@@ -98,8 +98,8 @@ The `session` object has been attached to all incoming requests, so we can acces
 
 ```javascript
 req.session.user = {
-    username: userInDatabase.username,
-  };
+  username: userInDatabase.username,
+};
 ```
 
 Once that's done, we can simply redirect the user back to the home page for now.

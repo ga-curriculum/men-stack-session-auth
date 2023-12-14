@@ -43,9 +43,9 @@ This code processes all incoming requests, and if the url starts with `/auth`, i
 For example, the controller route for `/auth/sign-up` will look like this:
 
 ```javascript
-router.get('/sign-up', (req, res)=>{
-    res.render('sign-up.ejs')
-})
+router.get('/sign-up', (req, res) => {
+  res.render('sign-up.ejs');
+});
 ```
 
 The full url to access that route will be `/auth/sign-up`.

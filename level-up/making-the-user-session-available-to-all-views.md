@@ -33,8 +33,8 @@ In `middleware/pass-user-to-view.js`:
 
 ```javascript
 const passUserToView = (req, res, next) => {
-  res.locals.user = req.session.user ? req.session.user : null
-  next()
+  res.locals.user = req.session.user ? req.session.user : null;
+  next();
 }
 
 module.exports = passUserToView
@@ -63,7 +63,7 @@ app.use(
   })
 );
 // NEW LINE ADDING OUR MIDDLEWARE TO THE REQUEST PIPELINE
-app.use(passUserToView)
+app.use(passUserToView);
 ```
 
 ## Refactoring the Landing Page Route

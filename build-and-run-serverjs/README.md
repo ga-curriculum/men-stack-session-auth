@@ -28,7 +28,7 @@ Include the following boilerplate code in `server.js`:
 
 ```javascript
 const dotenv = require('dotenv');
-dotenv.config()
+dotenv.config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -60,10 +60,10 @@ The syntax commonly seen for this variable is a **ternary** statement, which is 
 
 ```javascript
 let port;
-if(process.env.PORT){
-    port = process.env.PORT
-}else{
-    port = 3000;
+if (process.env.PORT) {
+  port = process.env.PORT
+} else {
+  port = 3000;
 }
 ```
 
