@@ -1,5 +1,29 @@
 # ![Mongoose, Express, EJS, and Session Auth - Level Up - Protecting Routes with Middleware](./assets/hero.png)
 
+## The Three Parameters of Custom Middleware
+
+When writing a custom middleware function, recall that we want three parameters instead of the usual two parameters our route handlers have been using:
+
+**req** is the request object,
+**res** is the response object,
+**next** is the third parameter, representing the next function in the long line of middleware and route handlers that a request is processed through.
+
+Instead of using the response object to send something back to the user, like our **endpoint** handlers would, the middleware function should complete by invoking the **next** callback.
+
+We could simply pass this middleware function to any controller that would need to use it like so:
+
+```javascript
+app.use('/vip-lounge', (req, res, next) => {
+  if (req.session.user) {
+    res.locals.user = req.session.user;
+    next();
+  } else {
+    res.redirect('/');
+  }
+}, vipsController);
+```
+This is a fine pattern to take if you know that you only need to pass this middleware logic into one controller.  But what if you wanted to pass middleware in multiple controllers?
+
 ## Refactoring Route Protection with Middleware
 
 So far, we protected our route by putting a simple `if` check inside the route itself. You can imagine, however, that this would be repeated many times throughout our application, as many routes want to be protected from unauthenticated or unauthorized users. Sounds like an opportunity to modularize and refactor: are we having fun yet??
@@ -10,16 +34,6 @@ Express's relatively non-opinionated nature means we'll probably want several cu
 mkdir middleware
 touch middleware/is-signed-in.js
 ```
-
-## The Three Parameters of Custom Middleware
-
-When writing a custom middleware function, recall that we want three parameters instead of the usual two parameters our route handlers have been using:
-
-**req** is the request object,
-**res** is the response object,
-**next** is the third parameter, representing the next function in the long line of middleware and route handlers that a request is processed through.
-
-Instead of using the response object to send something back to the user, like our **endpoint** handlers would, the middleware function should complete by invoking the **next** callback. 
 
 We can otherwise move the same logic from our existing VIP Lounge route and put it into this middleware function.
 
