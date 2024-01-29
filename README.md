@@ -14,7 +14,7 @@ tktk Write a short but descriptive summary of the content in this module.
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [Setup](./setup/README.md)                                      | -- | -- | tktk skills covered |
+| [Setup](./setup/README.md)                                      | -- | -- | Setting up the development environment |
 | [Build and Run `server.js`](./build-and-run-serverjs/README.md) | -- | -- | tktk skills covered |
 | [Build a Landing Page](./build-a-landing-page/README.md)        | -- | -- | tktk skills covered |
 | [Build the `User` Model](./build-the-user-model/README.md)      | -- | -- | tktk skills covered |
