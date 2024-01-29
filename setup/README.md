@@ -1,7 +1,5 @@
 # ![Mongoose, Express, EJS, and Session Auth - Setup](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
-
 Open your Terminal application and navigate to your `~/code/ga/lectures` directory:
 
 ```bash
