@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Build the Sign In Page](./assets/hero.png)
+# ![MEN Stack Session Auth - Build the Sign In Page](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to create a page for users to sign in to an express application.
 
@@ -15,21 +15,21 @@ In `views/auth/sign-in.ejs`:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In</title>
-</head>
-<body>
-  <h1>Sign in</h1>
-  <form action="/auth/sign-in" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" />
-    <button type="submit">Sign in</button>
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <h1>Sign in</h1>
+    <form action="/auth/sign-in" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" />
+      <button type="submit">Sign in</button>
+    </form>
+  </body>
 </html>
 ```
 
@@ -50,13 +50,12 @@ Finally, we can add a simple route to our controller file to render this templat
 In `controllers/auth.js`:
 
 ```javascript
-router.get('/sign-in', (req, res) => {
-  res.render('auth/sign-in.ejs');
+router.get("/sign-in", (req, res) => {
+  res.render("auth/sign-in.ejs");
 });
 ```
 
 Test the route by navigating from the landing page link.
-
 
 [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-in-page-start)
 

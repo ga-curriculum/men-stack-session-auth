@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Level Up - Making the User Session Available to All Views](./assets/hero.png)
+# ![MEN Stack Session Auth - Level Up - Making the User Session Available to All Views](./assets/hero.png)
 
 ## The Magic of res.locals
 
@@ -10,13 +10,13 @@ Therefore, we're going to make use of the almost magical `res.locals` object tha
 
 ```javascript
 res.locals.magicNumber = 13;
-res.render('/some-template.ejs');
+res.render("/some-template.ejs");
 ```
 
 Then the rendered template will have access to a `magicNumber` variable like so:
 
 ```html
-<p> The magic number is <%= magicNumber %>
+<p>The magic number is <%= magicNumber %></p>
 ```
 
 ## Creating Our Middleware
@@ -35,9 +35,9 @@ In `middleware/pass-user-to-view.js`:
 const passUserToView = (req, res, next) => {
   res.locals.user = req.session.user ? req.session.user : null;
   next();
-}
+};
 
-module.exports = passUserToView
+module.exports = passUserToView;
 ```
 
 While we're using a ternary to shorten up the code, this could have been done with an `if...else` statement exactly the same. The logic remains the same: if there's a `user` property in `req.session`, send it to the template. If there isn't, set the `res.locals.user` property to `null`, so that all templates have a variable they can test to see if the user is signed in or not.
@@ -49,7 +49,7 @@ Now, since all view routes are going to want access to this variable, we should 
 First, of course, we need to add the import statement to our stack of `require` statements:
 
 ```javascript
-const passUserToView = require('./middleware/pass-user-to-view.js');
+const passUserToView = require("./middleware/pass-user-to-view.js");
 ```
 
 Then, we can add this to our middleware stack in `server.js`:
@@ -71,8 +71,8 @@ app.use(passUserToView);
 If this middleware works properly, it means no other route should ever need to add `req.session.user` to the context object being provided to a render statement. Let's test this out by removing the context object from our landing page route, and simplifying it back down to the following:
 
 ```javascript
-app.get('/', (req, res) => {
-  res.render('index.ejs');
+app.get("/", (req, res) => {
+  res.render("index.ejs");
 });
 ```
 

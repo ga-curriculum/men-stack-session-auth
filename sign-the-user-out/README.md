@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Sign the User Out](./assets/hero.png)
+# ![MEN Stack Session Auth - Sign the User Out](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to implement user sign out in an express application.
 
@@ -11,18 +11,17 @@ Let's start by adding a link on the landing page for users to sign out. We only 
 In `views/index.ejs`:
 
 ```html
-  <% if (user) { %>
-    <h1>Welcome to the app, <%= user.username %>!</h1>
-    <p>
-      <a href="/auth/sign-out">Sign out</a>
-    </p>
-  <% } else { %>
-    <h1>Welcome to the app, guest.</h1>
-    <p>
-      <a href="/auth/sign-up">Sign up</a> or
-      <a href="/auth/sign-in">Sign in</a>.
-    </p>
-  <% } %>
+<% if (user) { %>
+<h1>Welcome to the app, <%= user.username %>!</h1>
+<p>
+  <a href="/auth/sign-out">Sign out</a>
+</p>
+<% } else { %>
+<h1>Welcome to the app, guest.</h1>
+<p>
+  <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">Sign in</a>.
+</p>
+<% } %>
 ```
 
 ## The Sign Out Controller Function
@@ -32,8 +31,8 @@ Our sign out link will send a GET request to `/auth/sign-out`, so we should prep
 In `/controllers/auth.js`:
 
 ```javascript
-router.get('/sign-out', (req, res) => {
-  res.send('The user wants out!');
+router.get("/sign-out", (req, res) => {
+  res.send("The user wants out!");
 });
 ```
 
@@ -44,9 +43,9 @@ After that, most applications will redirect the user back to the landing page, s
 The final controller method should look like this:
 
 ```javascript
-router.get('/sign-out', (req, res) => {
+router.get("/sign-out", (req, res) => {
   req.session.destroy();
-  res.redirect('/');
+  res.redirect("/");
 });
 ```
 

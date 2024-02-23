@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Level Up - Saving Sessions in MongoDB](./assets/hero.png)
+# ![MEN Stack Session Auth - Level Up - Saving Sessions in MongoDB](./assets/hero.png)
 
 ## Saving Sessions in MongoDB
 
@@ -15,7 +15,7 @@ Next, we'll set things up in `server.js` to modify our session settings and tell
 First, add the import of `MongoStore` right below our list of other require statements, just under the session require statement.
 
 ```javascript
-const MongoStore = require('connect-mongo');
+const MongoStore = require("connect-mongo");
 ```
 
 Then, we modify the session `app.use` statement to include a `store` property inside the options object provided to our session middleware. If you're wondering where we got this from, it's straight from the connect-mongo documentation linked above!
@@ -37,7 +37,7 @@ app.use(
 
 Previously, our sessions lived in the internal memory of the server, so we didn't need to worry about the time it took to update these objects before proceeding to the next line of code.
 
-Now that sessions live in MongoDB, however, any updates to the session object are asynchronous operations that take just as much time as any of the other database calls throughout our app. This means we need to wait for the operation to complete before proceeding to the next part of a user's journey. 
+Now that sessions live in MongoDB, however, any updates to the session object are asynchronous operations that take just as much time as any of the other database calls throughout our app. This means we need to wait for the operation to complete before proceeding to the next part of a user's journey.
 
 For example, if you tested the app in its current state, you'd find that signing out produces a **race condition** bug: while the controller function moves happily along from `req.session.destroy()` to `res.redirect(/)`, the redirect might finish before the session has had time to actually update, so the landing page will still display the username and a greeting despite the fact that the user just tried to sign out. Not great!
 
@@ -52,7 +52,7 @@ req.session.user = {
   username: userInDatabase.username,
 };
 
-res.redirect('/');
+res.redirect("/");
 ```
 
 to an asynchronous pattern by providing a callback function to the `req.session.save` method:
@@ -63,7 +63,7 @@ req.session.user = {
 };
 
 req.session.save(() => {
-    res.redirect('/');
+  res.redirect("/");
 });
 ```
 
@@ -73,7 +73,7 @@ Similarly, we want to avoid the race condition described above in our sign out p
 
 ```javascript
 req.session.destroy(() => {
-    res.redirect('/');
+  res.redirect("/");
 });
 ```
 

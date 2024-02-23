@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Recap](./assets/hero.png)
+# ![MEN Stack Session Auth - Recap](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to articulate the process of authentication in an express application.
 

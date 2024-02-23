@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Build the User Model](./assets/hero.png)
+# ![MEN Stack Session Auth - Build the User Model](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to create a User model with mongoose.
 
@@ -18,7 +18,7 @@ Applications vary in their implementation of the user model. Some rely on `email
 In `user.js`:
 
 ```javascript
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
 ```

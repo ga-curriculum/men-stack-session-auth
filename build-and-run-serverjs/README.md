@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Build and Run server.js](./assets/hero.png)
+# ![MEN Stack Session Auth - Build and Run server.js](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to set up an express server file that uses an environment variable for its port number, logs requests to the console, connects to mongodb, and has the proper middleware stack to process form requests.
 
@@ -27,24 +27,24 @@ MONGODB_URI=<connection-string-from-mongodb-atlas>
 Include the following boilerplate code in `server.js`:
 
 ```javascript
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
-const express = require('express');
+const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
-const methodOverride = require('method-override');
-const morgan = require('morgan');
+const mongoose = require("mongoose");
+const methodOverride = require("method-override");
+const morgan = require("morgan");
 
-const port = process.env.PORT ? process.env.PORT : '3000';
+const port = process.env.PORT ? process.env.PORT : "3000";
 
 mongoose.connect(process.env.MONGODB_URI);
 
-mongoose.connection.on('connected', () => {
+mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 // app.use(morgan('dev'));
 
 app.listen(port, () => {
@@ -61,7 +61,7 @@ The syntax commonly seen for this variable is a **ternary** statement, which is 
 ```javascript
 let port;
 if (process.env.PORT) {
-  port = process.env.PORT
+  port = process.env.PORT;
 } else {
   port = 3000;
 }

@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - References](./assets/hero.png)
+# ![MEN Stack Session Auth - References](./assets/hero.png)
 
 ## Lesson references
 

@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Level Up - Protecting Routes with Middleware](./assets/hero.png)
+# ![MEN Stack Session Auth - Level Up - Protecting Routes with Middleware](./assets/hero.png)
 
 ## The Three Parameters of Custom Middleware
 
@@ -13,16 +13,21 @@ Instead of using the response object to send something back to the user, like ou
 We could simply pass this middleware function to any controller that would need to use it like so:
 
 ```javascript
-app.use('/vip-lounge', (req, res, next) => {
-  if (req.session.user) {
-    res.locals.user = req.session.user;
-    next();
-  } else {
-    res.redirect('/');
-  }
-}, vipsController);
+app.use(
+  "/vip-lounge",
+  (req, res, next) => {
+    if (req.session.user) {
+      res.locals.user = req.session.user;
+      next();
+    } else {
+      res.redirect("/");
+    }
+  },
+  vipsController
+);
 ```
-This is a fine pattern to take if you know that you only need to pass this middleware logic into one controller.  But what if you wanted to pass middleware in multiple controllers?
+
+This is a fine pattern to take if you know that you only need to pass this middleware logic into one controller. But what if you wanted to pass middleware in multiple controllers?
 
 ## Refactoring Route Protection with Middleware
 
@@ -42,7 +47,7 @@ In `middleware/is-signed-in.js`:
 ```javascript
 const isSignedIn = (req, res, next) => {
   if (req.session.user) return next();
-  res.redirect('/auth/sign-in');
+  res.redirect("/auth/sign-in");
 };
 
 module.exports = isSignedIn;
@@ -50,7 +55,7 @@ module.exports = isSignedIn;
 
 This function checks if `req.session.user` exists, and if it does, it allows the request to continue on the normal chain by invoking `next()` and returning. If this check fails, however, it moves to redirect the user to the sign-in page, strongly suggesting to the user that, to get where they want to go, they'll have to sign in.
 
-An extreme bonus challenge for you might be to use session, or query parameters, to store the url they were **trying** to get to, and changing the sign-in flow to redirect them back to that route once they've finished signing in. You've seen this in many applications in the url bar: `?redirectURL=profile`, for example. 
+An extreme bonus challenge for you might be to use session, or query parameters, to store the url they were **trying** to get to, and changing the sign-in flow to redirect them back to that route once they've finished signing in. You've seen this in many applications in the url bar: `?redirectURL=profile`, for example.
 
 ## Plugging in the Middleware
 
@@ -61,7 +66,7 @@ First, we'll need to import the middleware function at the bottom of our growing
 In `server.js`:
 
 ```javascript
-const isSignedIn = require('./middleware/is-signed-in.js');
+const isSignedIn = require("./middleware/is-signed-in.js");
 ```
 
 Interestingly, a route controller can accept any number of handler functions as inputs, so we can just add this function directly before the `(req, res)` callback.
@@ -69,7 +74,7 @@ Interestingly, a route controller can accept any number of handler functions as 
 In `server.js`:
 
 ```javascript
-app.get('/vip-lounge', isSignedIn, (req, res) => {
+app.get("/vip-lounge", isSignedIn, (req, res) => {
   res.send(`Welcome to the party ${req.session.user.username}.`);
 });
 ```

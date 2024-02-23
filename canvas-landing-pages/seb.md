@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth](../assets/tktk-hero.png)
+# ![MEN Stack Session Auth](../assets/tktk-hero.png)
 
 ## About
 
@@ -6,8 +6,8 @@ tktk Write a short but descriptive summary of the content in this module.
 
 ## Content
 
-| Lesson | Skills |
-| ------ | ------ |
+| Lesson                                                           | Skills              |
+| ---------------------------------------------------------------- | ------------------- |
 | [Setup](../setup/README.md)                                      | tktk skills covered |
 | [Build and Run `server.js`](../build-and-run-serverjs/README.md) | tktk skills covered |
 | [Build a Landing Page](../build-a-landing-page/README.md)        | tktk skills covered |
@@ -20,17 +20,17 @@ tktk Write a short but descriptive summary of the content in this module.
 | [Sign the User Out](../sign-the-user-out/README.md)              | tktk skills covered |
 | [Protecting Routes](../protecting-routes/README.md)              | tktk skills covered |
 | [Recap](../recap/README.md)                                      | tktk skills covered |
-| **Total content**                                               |                     |
+| **Total content**                                                |                     |
 
 ## Level Up content
 
-| Lesson | Skills |
-| ------ | ------ |
-| [Saving Sessions in MongoDB](../level-up/saving-sessions-in-mongodb.md)                           | tktk skills covered |
-| [Sign In on Sign Up](../level-up/sign-in-on-sign-up.md)                                           | tktk skills covered |
-| [Protecting Routes with Middleware](../level-up/protecting-routes-with-middleware.md)             | tktk skills covered |
+| Lesson                                                                                                          | Skills              |
+| --------------------------------------------------------------------------------------------------------------- | ------------------- |
+| [Saving Sessions in MongoDB](../level-up/saving-sessions-in-mongodb.md)                                         | tktk skills covered |
+| [Sign In on Sign Up](../level-up/sign-in-on-sign-up.md)                                                         | tktk skills covered |
+| [Protecting Routes with Middleware](../level-up/protecting-routes-with-middleware.md)                           | tktk skills covered |
 | [Making the User Session Available to All Views](../level-up/making-the-user-session-available-to-all-views.md) | tktk skills covered |
-| **Total Level Up content**                                                                                     |                     |
+| **Total Level Up content**                                                                                      |                     |
 
 ## References
 

@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Build a Landing Page](./assets/hero.png)
+# ![MEN Stack Session Auth - Build a Landing Page](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to build an Express route that renders a landing page for an application.
 
@@ -14,8 +14,8 @@ We'll need to start with a route in our `server.js` file. We'll set it up to sen
 // server.js
 
 // GET /
-app.get('/', async (req, res) => {
-  res.send('hello, friend!');
+app.get("/", async (req, res) => {
+  res.send("hello, friend!");
 });
 ```
 
@@ -44,14 +44,14 @@ Open that file, and add HTML boilerplate, along with some content inside of the 
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-</head>
-<body>
-  <h1>Welcome to the app!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <h1>Welcome to the app!</h1>
+  </body>
 </html>
 ```
 
@@ -61,8 +61,8 @@ With that built, all we need to do is send it in response to a request on the `/
 // server.js
 
 // GET /
-app.get('/', async (req, res) => {
-  res.render('index.ejs');
+app.get("/", async (req, res) => {
+  res.render("index.ejs");
 });
 ```
 

@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Protecting Routes](./assets/hero.png)
+# ![MEN Stack Session Auth - Protecting Routes](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to implement controller logic to protect a route in express.
 
@@ -25,11 +25,11 @@ We can now create the route handler for the `/vip-lounge` request, and since thi
 In `server.js`:
 
 ```javascript
-app.get('/vip-lounge', (req, res) => {
+app.get("/vip-lounge", (req, res) => {
   if (req.session.user) {
     res.send(`Welcome to the party ${req.session.user.username}.`);
   } else {
-    res.send('Sorry, no guests allowed.');
+    res.send("Sorry, no guests allowed.");
   }
 });
 ```

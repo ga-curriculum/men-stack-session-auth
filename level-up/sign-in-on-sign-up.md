@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Level Up - Sign In on Sign Up](./assets/hero.png)
+# ![MEN Stack Session Auth - Level Up - Sign In on Sign Up](./assets/hero.png)
 
 ## Sign 'Em Up, Sign 'Em In!
 
@@ -11,13 +11,13 @@ Briefly, we'll copy the same code from our `sign-in` controller into our `sign-u
 In `controllers/auth.js` right beneath the `User.create` statement in our `sign-up` controller:
 
 ```javascript
-  req.session.user = {
-    username: user.username,
-  };
+req.session.user = {
+  username: user.username,
+};
 
-  req.session.save(() => {
-    res.redirect('/');
-  });
+req.session.save(() => {
+  res.redirect("/");
+});
 ```
 
 If you haven't yet implemented saving sessions to MongoDB, the callback pattern in our `req.session.save()` statement will look unfamiliar. In that case, you can still copy over the same code you're already using in the `sign-in` controller, without the `req.session.save()` callback pattern.

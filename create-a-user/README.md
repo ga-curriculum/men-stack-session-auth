@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Create a User](./assets/hero.png)
+# ![MEN Stack Session Auth - Create a User](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to create new user accounts through the sign up page in an express application.
 
@@ -9,7 +9,7 @@ For our form to make useful submissions to our server, we need to modify the `ac
 Modify the following in `views/auth/sign-up.ejs`:
 
 ```html
-<form action="/auth/sign-up" method="POST">
+<form action="/auth/sign-up" method="POST"></form>
 ```
 
 ## Processing the Request
@@ -19,15 +19,15 @@ Now, we need to create the controller function handling this request. Let's star
 In `controllers/auth.ejs`:
 
 ```javascript
-router.post('/sign-up', async (req, res) => {
-  res.send('Form submission accepted!');
+router.post("/sign-up", async (req, res) => {
+  res.send("Form submission accepted!");
 });
 ```
 
 Since we want this route to create a new User in the database, we'll first need to import the model into this file:
 
 ```javascript
-const User = require('../models/user.js');
+const User = require("../models/user.js");
 ```
 
 It would be **great** if we could simply do a `User.create` statement in the route and move on with our lives. Unfortunately, authentication is a bit more complicated than that! There are several problems we need to deal with:
@@ -45,7 +45,7 @@ Inside the route handler function:
 ```javascript
 const userInDatabase = await User.findOne({ username: req.body.username });
 if (userInDatabase) {
-  return res.send('Username already taken.');
+  return res.send("Username already taken.");
 }
 ```
 
@@ -57,7 +57,7 @@ Inside the route handler function, below the previous validation:
 
 ```javascript
 if (req.body.password !== req.body.confirmPassword) {
-  return res.send('Password and Confirm Password must match');
+  return res.send("Password and Confirm Password must match");
 }
 ```
 
@@ -76,7 +76,7 @@ npm i bcrypt
 ```
 
 ```javascript
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 ```
 
 Next, add the following lines to our controller function, beneath our previously written validations:
@@ -90,7 +90,7 @@ const user = await User.create(req.body);
 res.send(`Thanks for signing up ${user.username}`);
 ```
 
-The number `10` in the `hashSync` method represents the amount of salting we want the hashing function to execute: the higher the number, the harder it will be to decrypt the password. However, higher numbers will take longer for our application when we're checking a user's password, so we need to keep it reasonable for performance reasons. 
+The number `10` in the `hashSync` method represents the amount of salting we want the hashing function to execute: the higher the number, the harder it will be to decrypt the password. However, higher numbers will take longer for our application when we're checking a user's password, so we need to keep it reasonable for performance reasons.
 
 ## Test the Route
 

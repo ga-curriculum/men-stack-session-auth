@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session Auth - Build the Sign Up Page](./assets/hero.png)
+# ![MEN Stack Session Auth - Build the Sign Up Page](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to create a sign up page with a form allowing the creation of new users.
 
@@ -16,23 +16,23 @@ This template will have a simple form, like so:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up</title>
-</head>
-<body>
-  <h1>Create a new account!</h1>
-  <form action="" method="">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" />
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" name="confirmPassword" id="confirmPassword" />
-    <button type="submit">Sign up</button>
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <h1>Create a new account!</h1>
+    <form action="" method="">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" />
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" />
+      <button type="submit">Sign up</button>
+    </form>
+  </body>
 </html>
 ```
 
@@ -55,12 +55,12 @@ In `views/index.ejs`:
 Now that our authentication routes are going to be defined in a separate controller file, we can add the following to `controllers/auth.js`:
 
 ```javascript
-router.get('/sign-up', (req, res) => {
-  res.render('auth/sign-up.ejs');
+router.get("/sign-up", (req, res) => {
+  res.render("auth/sign-up.ejs");
 });
 ```
 
-Remember, we're using a `router` object defined by express instead of the `app` object we're used to, so all the routes should be defined with `router` instead of `app`. 
+Remember, we're using a `router` object defined by express instead of the `app` object we're used to, so all the routes should be defined with `router` instead of `app`.
 
 ## Test the Route
 
