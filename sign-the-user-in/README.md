@@ -6,7 +6,7 @@ In this section, we'll navigate through the sign-in process on our server. This 
 
 ## Define the route
 
-Once a user submits their request from the sign in page, we need a route set up to handle this request.Let's start with the simplest, testable version of this route, so we can immediately confirm a working form submission
+Once a user submits their request from the sign in page, we need a route set up to handle this request. Let's start with the simplest, testable version of this route, so we can immediately confirm a working form submission
 
 Add the following in `controllers/auth.js`:
 
