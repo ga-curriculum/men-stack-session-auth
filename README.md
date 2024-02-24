@@ -10,7 +10,7 @@ This module covers critical areas including secure password storage, route prote
 
 - RESTful routing
 - Intro to Express
-- EJS
+- Environment Variables
 - Intro to Mongoose
 
 ## Content

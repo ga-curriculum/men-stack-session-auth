@@ -2,9 +2,7 @@
 
 **Learning objective:** By the end of this lesson, students will be able to implement sign in functionality with sessions in a sign in route.
 
-In this section, we'll navigate through the sign-in process on our server. This begins when a user submits their credentials, triggering a `POST` request to the `/sign-in` route. The server's first step is to verify if the user exists in the database, followed by a password check using `bcrypt`. Successful verification of both username and password leads to the creation of a `session`. This `session`, which includes key user information like their `username`, is stored as a `cookie` in the user's browser, marking them as logged-in and enabling a personalized experience on our site. The user is then redirected to the landing page in their new authenticated state. It's worth noting that if the server is restarted, the session stored in memory will be lost, and the user will need to sign in again. 
-
-![tktk Hunter a overview of this process visually could be great](#)
+In this section, we'll navigate through the sign-in process on our server. This begins when a user submits their credentials, triggering a `POST` request to the `/sign-in` route. 
 
 ## Define the route
 
@@ -52,6 +50,8 @@ if (!validPassword) {
 If the route handler function has gotten this far, it means we have a successful attempt to sign in to the application. Great! Now what?
 
 There are various methods to manage signed-in users in applications. For ours, we've chosen to implement a ***session-based*** authentication strategy.
+
+![tktk Hunter a overview of this process visually could be great](#)
 
 Let's talk about `cookies`, which are central to this approach. `Cookies` are small pieces of data stored on your browser. You've likely encountered numerous websites asking if you're okay with them using `cookies`. Originally, these were widely employed by advertisers to track your activity across the internet and even shared across companies in a vast conspiracy of targeted ads.
 
