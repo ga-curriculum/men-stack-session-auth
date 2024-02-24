@@ -1,13 +1,9 @@
-# ![Mongoose, Express, EJS, and Session Auth - References](./assets/hero.png)
+# ![MEN Stack Session Auth - References](./assets/hero.png)
 
 ## Lesson references
 
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
+- [`Bcrypt`](https://www.npmjs.com/package/bcrypt)
 
 ## Level Up references
 
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
+- [connect-mongo](https://www.npmjs.com/package/connect-mongo)

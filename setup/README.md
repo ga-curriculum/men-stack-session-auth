@@ -1,4 +1,6 @@
-# ![Mongoose, Express, EJS, and Session Auth - Setup](./assets/hero.png)
+# ![MEN Stack Session Auth - Setup](./assets/hero.png)
+
+## Setup
 
 Open your Terminal application and navigate to your `~/code/ga/lectures` directory:
 
@@ -6,11 +8,20 @@ Open your Terminal application and navigate to your `~/code/ga/lectures` directo
 cd `~/code/ga/lectures`
 ```
 
-Make a new directory called `express-auth`, then enter this directory:
+Make a new repository on [GitHub](https://github.com/) named `men-stack-session-auth`.
+
+Clone a copy of your remote repo locally by using the `git clone` command:
 
 ```bash
-mkdir express-auth
-cd express-auth
+git clone https://git.generalassemb.ly/<your-username>/men-stack-session-auth.git
+```
+
+> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace <github-username> (including the < and >) in the URL above.
+
+Next, `cd` into your new cloned directory, `men-stack-session-auth`:
+
+```bash
+cd men-stack-session-auth
 ```
 
 In this directory create a `server.js` file:

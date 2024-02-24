@@ -1,14 +1,14 @@
-# ![Mongoose, Express, EJS, and Session Auth - Controllers](./assets/hero.png)
+# ![MEN Stack Session Auth - Controllers](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to create a controller file to import routes into an express server file.
+**Learning objective:** By the end of this lesson, students will be able to create and integrate a controller for auth routes in an Express server.
 
-## Refactoring Controllers
+## Create controllers
 
-Since we're building an authentication app, we should anticipate the need for multiple models in the future. After all, users will want to create and manage resources, not just sign in and sign out of an otherwise useless application. 
+Since we're building an authentication app, we should anticipate the need for multiple models in the future. After all, users will want to create and manage resources, not just sign in and sign out of an otherwise useless application.
 
 So, this means splitting off the routes for authentication into a separate file, so we can have a clean distinction between routes for auth and routes for other models being managed by users. This allows our authentication app to be a highly re-usable, modular code base that provides a starting point for any number of future applications!
 
-Let's start by making a directory and file for the controller functions that handle incoming requests:
+Let's start by making a `controllers` directory and `auth.js` file for the functions that handle incoming requests:
 
 ```bash
 mkdir controllers
@@ -17,39 +17,43 @@ touch controllers/auth.js
 
 This file will look similar to the way we set up routes in `server.js`, with one key exception: an express built-in `router` object will replace the `app` object, and we can plug in that `router` object later in `server.js`.
 
-In `controllers/auth.js`:
+Add the following to `controllers/auth.js`:
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 module.exports = router;
 ```
 
-Now, we need to import this `router` object into `server.js`, right after the line declaring the `port` variable:
+Now, let's import the `authController`, which contains our `router` object, into `server.js`. This should be done right after we declare the `port` variable:
 
 ```javascript
-const authController = require('./controllers/auth.js');
+const authController = require("./controllers/auth.js");
 ```
 
-In `server.js` beneath the home page route:
+After importing, we'll instruct our Express app to use this `authController` for handling requests that match the `/auth` URL pattern. 
+
+To do this, add the following line in `server.js`, just below where we've defined our home page route:
 
 ```javascript
-app.use('/auth', authController);
+app.use("/auth", authController);
 ```
 
-This code processes all incoming requests, and if the url starts with `/auth`, it sends the request to be completed in the `authController.js` file by the `router` object. From that point on, the controller only needs to finish the route's url **after** `/auth`, and we won't need to include `/auth` in the controller file's routes. 
+With this code in place, Express will now funnel any requests starting with `/auth` to the `authController`. The `authController` is essentially a set of routes defined in `authController.js`, managed by the `router` object. 
 
-For example, the controller route for `/auth/sign-up` will look like this:
+For each of these routes, the URL path handled by the `authController` will already have `/auth` as its base. Therefore, within the `authController.js` file, we only need to specify the remaining part of the URL path, excluding `/auth`, for each route.
+
+For example, the controller route for `/auth/sign-up` in the `authController` will look like this:
 
 ```javascript
-router.get('/sign-up', (req, res) => {
-  res.render('sign-up.ejs');
+router.get("/sign-up", (req, res) => {
+  res.render("sign-up.ejs");
 });
 ```
 
-The full url to access that route will be `/auth/sign-up`.
+The full url to access that route from a browser would be `/auth/sign-up`.
 
-[Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/controllers-start)
+<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/controllers-start)
 
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/controllers-complete)
+[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/controllers-complete) -->
