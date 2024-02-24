@@ -2,7 +2,7 @@
 
 ## Saving Sessions in MongoDB
 
-You're probably here because it's quickly become very annoying to lose your session every time the server restarts, and testing your express app has become an endless struggle of signing in before being able to do anything. Storing anything in the internal memory of the server is a bad idea, so let's fix that by using an npm package that stores our session data in MongoDB.
+You're probably here because it's quickly become very annoying to lose your session every time the server restarts, and testing your express app has become an endless struggle of signing in before being able to do anything. Storing anything in the internal memory of the server is not ideal, so let's fix that by using an npm package that stores our session data in MongoDB.
 
 First, install the package [connect-mongo](https://www.npmjs.com/package/connect-mongo) from the command line:
 
@@ -33,17 +33,17 @@ app.use(
 );
 ```
 
-## WARNING: Session Modifications Are Now Asynchronous
+## WARNING: Session modifications are now asynchronous
 
 Previously, our sessions lived in the internal memory of the server, so we didn't need to worry about the time it took to update these objects before proceeding to the next line of code.
 
 Now that sessions live in MongoDB, however, any updates to the session object are asynchronous operations that take just as much time as any of the other database calls throughout our app. This means we need to wait for the operation to complete before proceeding to the next part of a user's journey.
 
-For example, if you tested the app in its current state, you'd find that signing out produces a **race condition** bug: while the controller function moves happily along from `req.session.destroy()` to `res.redirect(/)`, the redirect might finish before the session has had time to actually update, so the landing page will still display the username and a greeting despite the fact that the user just tried to sign out. Not great!
+For example, if you tested the app in its current state, you'd find that signing out produces a bug called a **race condition** : while the controller function moves happily along from `req.session.destroy()` to `res.redirect(/)`, the redirect might finish before the session has had time to actually update, so the landing page will still display the username and a greeting despite the fact that the user just tried to sign out. Not great!
 
 This means we'll have to go in to all the controller functions that modify `req.session` and revise them to use the asynchronous **callback** pattern provided by `express-session`.
 
-## Modifying the Sign In Controller
+## Modifying the sign in controller
 
 Fortunately, this is a pretty straightforward fix. All we need to do is update the very end of our controller function from the synchronous pattern:
 
@@ -55,7 +55,7 @@ req.session.user = {
 res.redirect("/");
 ```
 
-to an asynchronous pattern by providing a callback function to the `req.session.save` method:
+...to an asynchronous pattern by providing a callback function to the `req.session.save` method:
 
 ```javascript
 req.session.user = {
@@ -67,7 +67,7 @@ req.session.save(() => {
 });
 ```
 
-## Modifying the Sign Out Controller
+## Modifying the sign out controller
 
 Similarly, we want to avoid the race condition described above in our sign out process, so let's update that using the same pattern.
 
@@ -77,6 +77,6 @@ req.session.destroy(() => {
 });
 ```
 
-[Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/saving-sessions-in-MongoDB-start)
+<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/saving-sessions-in-MongoDB-start)
 
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/saving-sessions-in-MongoDB-complete)
+[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/saving-sessions-in-MongoDB-complete) -->

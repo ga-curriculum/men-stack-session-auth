@@ -1,14 +1,16 @@
 # ![MEN Stack Session Auth - Sign the User In](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to implement sign in functionality in an express application.
+**Learning objective:** By the end of this lesson, students will be able to implement sign in functionality with sessions in a sign in route.
 
-## The Sign In Route
+In this section, we'll navigate through the sign-in process on our server. This begins when a user submits their credentials, triggering a `POST` request to the `/sign-in` route. The server's first step is to verify if the user exists in the database, followed by a password check using `bcrypt`. Successful verification of both username and password leads to the creation of a `session`. This `session`, which includes key user information like their `username`, is stored as a `cookie` in the user's browser, marking them as logged-in and enabling a personalized experience on our site. The user is then redirected to the landing page in their new authenticated state. It's worth noting that if the server is restarted, the session stored in memory will be lost, and the user will need to sign in again. 
 
-Once a user submits their request from the sign in page, we need a route set up to handle this request.
+![tktk Hunter a overview of this process visually could be great](#)
 
-Let's start with the simplest, testable version of this route, so we can immediately confirm that submitting the form will trigger this route:
+## Define the route
 
-In `controllers/auth.js`:
+Once a user submits their request from the sign in page, we need a route set up to handle this request.Let's start with the simplest, testable version of this route, so we can immediately confirm a working form submission
+
+Add the following in `controllers/auth.js`:
 
 ```javascript
 router.post("/sign-in", async (req, res) => {
@@ -16,11 +18,11 @@ router.post("/sign-in", async (req, res) => {
 });
 ```
 
-## Confirming a User Exists
+## Confirming a `User` exists
 
-First, we need to grab the user from the database, using the username provided in the form. If there is no such user, we have our first failure condition, and can send back an appropriate response to the user. For security reasons, we will recycle the same, vague message for all sign in failures, so that a prospective hacker won't know more than they need to.
+First, we need to grab the user from the database, using the username provided in the form. If there is no such user, we have our first failure condition, and can send back an appropriate response. For security reasons, we will recycle the same, vague message for all sign in failures, so that a prospective hacker won't have any clues about what exactly is failing.
 
-Inside the route handler function:
+Add the following inside the route handler function:
 
 ```javascript
 const userInDatabase = await User.findOne({ username: req.body.username });
@@ -29,11 +31,11 @@ if (!userInDatabase) {
 }
 ```
 
-## bCrypt's Comparison Function
+## `Bcrypt`'s comparison function
 
-Inside this route, we will again rely on `bcrypt` to determine if their password matches the one stored in the database. The `bcrypt` library has a `compareSync` method that will compare a hashed version of the password with the plain-text version submitted in the form, and return a `true` or `false` response based on whether the passwords match or not. If the result is `false`, we send the same failure message as before.
+Inside this route, we will again rely on `bcrypt` to determine if the entered password matches the one stored in the database. The `bcrypt` library has a `compareSync`  method to check if the plain-text password entered by the user matches the hashed password in the database. It hashes the user's input with the same method used for the stored password and compares the two hashes. This method returns a `true` or `false` response based on whether the passwords match. If the result is `false`, we send the same failure message as before.
 
-Beneath the previous validation:
+Add the following beneath the previous validation:
 
 ```javascript
 const validPassword = bcrypt.compareSync(
@@ -45,43 +47,52 @@ if (!validPassword) {
 }
 ```
 
-## Session-Based Authentication
+## Session-based authentication
 
 If the route handler function has gotten this far, it means we have a successful attempt to sign in to the application. Great! Now what?
 
-There are several competing ways of handling a signed in user for an application, and for this application, we'll use a **session-based** authentication strategy.
+There are various methods to manage signed-in users in applications. For ours, we've chosen to implement a ***session-based*** authentication strategy.
 
-To understand this strategy, we'll first have to talk a bit about **cookies**. Cookies are tiny bits of information stored on a browser, and you're likely familiar by now with the constant messages on websites asking you whether you want to allow or disable cookies on their site. These were once used everywhere by advertisers to track your activity across the internet, and shared across many companies in a vast conspiracy to keep shoving ads in your face.
+Let's talk about `cookies`, which are central to this approach. `Cookies` are small pieces of data stored on your browser. You've likely encountered numerous websites asking if you're okay with them using `cookies`. Originally, these were widely employed by advertisers to track your activity across the internet and even shared across companies in a vast conspiracy of targeted ads.
 
-However, cookies aren't only used for evil: they are also used to manage shopping carts on e-commerce sites, so if you close your browser tab or navigate away from the page, the site still "remembers" what you'd previously put in your cart.
+But `cookies` have their good sides too. They're what allow e-commerce sites to remember what’s in your shopping cart, even if you accidentally close the tab or browse away.
 
-One downside to using cookies is that they're stored in the browser, giving the user total access to the information stored in them. Therefore, cookies are not supposed to store sensitive information like passwords, since the front-end is considered insecure by nature.
+Now, the catch with `cookies` is that they reside in the browser, making everything in them accessible to the user. That's why we cant store sensitive data like passwords in `cookies` — the front-end isn't secure.
 
-For our purposes, though, the cookie can store encrypted information about the signed-in user that only our server is able to decrypt. This information is called a **session**.
+In our **session-based** strategy, however, we use `cookies` differently. They'll hold encrypted information about the signed-in user, which only our server can decrypt. This encrypted information forms a `session`.
 
-If you're signed in to an application, you have a session marking you authenticated. A user's future requests to the application will include this session object, automatically stored in their browser as a cookie. Our server will process this object to figure out if a request is coming from a signed in user, and if so, who that user is.
+When a user signs into our application, they start a `session` that marks them as authenticated. Future requests from this user will carry this `session` in their browser cookie. Our server reads this `session` to verify if the request is from a signed-in user and, if so, identify who that user is.
 
-## Setting Up Sessions in Our Server
+## Setting up sessions in our server
 
-Sessions are a lot to handle, so we'll need a new library to plug sessions into our express application:
+Sessions are another part of authentication best left to established third party libraries. So we'll need a new package to use sessions in our express application:
 
 ```bash
 npm i express-session
 ```
 
-Since we're encrypting and decrypting the information from this session object, we'll need to create a new environment variable called a `SESSION_SECRET` that is used in the encrypting and decrypting process. We need to keep this string secure, or else anyone would be able to decrypt and read the information stored in the session.
+Since we're encrypting and decrypting information from a `session` object, we'll need to create a new environment variable called  `SESSION_SECRET` that is used in the encrypting and decrypting process. We need to keep this string secure, or else anyone would be able to decrypt and read the information stored in the `session`.
 
-In the `.env` file:
+Add a `SESSION_SECRET` variable to your `.env` file:
 
 ```
 SESSION_SECRET=secret-string-unique-to-your-app
 ```
 
-We want to process the information contained in this session, and which might be useful to any number of routes down the line. Sounds like middleware to me!
+This string can be anything you want.
 
-In `server.js` at the bottom of our middleware stack, after the `morgan` statement:
+## Managing sessions
+
+Every time a user accesses a route in our application, we'll likely need to perform actions related to their `session`, which sounds like a great case for middleware! 
+This middleware will automatically manage session data for each user request, ensuring a seamless and secure user experience throughout our application.
+
+
+Add the following to `server.js` at the bottom of our middleware stack:
 
 ```javascript
+app.use(methodOverride("_method"));
+app.use(morgan('dev'));
+// new
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -91,11 +102,14 @@ app.use(
 );
 ```
 
-## Creating a Session for a Signed-In User
+This code integrates session management into our application using the `express-session` library. It configures the session middleware to securely manage user sessions with a secret key, specifies not to resave sessions that haven't changed, and allows for storing new, uninitialized sessions. 
 
-With that, we're finally ready to return to and complete our sign in route. Once a request has passed the previous validations, we want to create a new session for that user and store their username in that session, so we know future requests are coming from them.
 
-The `session` object has been attached to all incoming requests, so we can access it through the `req` object directly, like so:
+## Creating a session for a signed-in user
+
+Now that we've set up our session middleware, we can finalize the sign-in route in our route handler. After a user's request successfully passes the initial validations, our next step is to establish a new session for them. This involves storing their username in the session. By doing so, we can identify and authenticate the user for their future requests to our application.
+
+With the addition of our middleware, a `session` object has been attached to all incoming requests, so we can access it in routes through the `req` object directly:
 
 ```javascript
 req.session.user = {
@@ -103,13 +117,15 @@ req.session.user = {
 };
 ```
 
-Once that's done, we can simply redirect the user back to the home page for now.
+This code sets the user retrieved from the database as the user in the newly created session. 
+
+Once that's done, we can simply redirect them back to the landing page for now.
 
 ```javascript
 res.redirect("/");
 ```
 
-## Full Route Handler
+## Full route handler
 
 To recap, here's what your full route handler function should look like:
 
@@ -141,17 +157,20 @@ router.post("/sign-in", async (req, res) => {
 });
 ```
 
-## Modify the Landing Page and Index Route
+## Modify the Landing page and `index` route
 
-To test this signed-in functionality, let's modify our original landing page, making use of the `req.session` object that every request now has.
+To test the functionality of user sign-in, we need to update our landing page to reflect the user's sign-in status. This is done by utilizing the `req.session` object, which is now attached to every request due to our `session` middleware.
 
-Specifically, we'll send a `user` variable to the template that's set equal to the `req.session.user` property we just created in the sign in route.
+Here's how we'll do this:
 
-If that variable is `undefined`, the template will treat the user as a guest who has not yet signed in to the app.
+- In our landing page's route, we're going to send a `user` variable to our `index.ejs` template. This variable is assigned the value of `req.session.user`, a property we just set during the sign-in process.
 
-If there is a value in this variable, however, we can greet the user and not show them the links to sign up or sign in, since they've already done both!
+- If `user` is `undefined` (which happens `when req.session.user` is not set), it means the visitor isn't signed in. In this case, our template will treat them as a guest, showing options to sign up or sign in.
 
-First, let's change the route in `server.js` to the following:
+- If `user` has a value (meaning `req.session.user` is set), the visitor is recognized as a signed-in user. We can then personalize their greeting and omit the sign-up and sign-in links, as they're already authenticated.
+
+
+First, we'll change the route in `server.js` to the following:
 
 ```javascript
 app.get("/", (req, res) => {
@@ -174,14 +193,14 @@ Then, we can add some logic to the `index.ejs` template, like so:
 <% } %>
 ```
 
-## Testing Sign In
+## Testing sign in
 
-You should now be able to test all of this functionality through the application directly. Failed sign in attempts should simply result in a message shown in the browser, and require you to navigate back to the sign in page. A successful sign in should result in seeing the landing page again, with a friendly greeting message.
+You should now be able to test all of this functionality through the application directly. Failed sign in attempts should simply result in a message shown in the browser, and require you to navigate back to the sign in page. A successful sign in should result in seeing the landing page again, with a personalized greeting.
 
 Note, however, that any time you restart the server, the version of the session object being stored in the server's memory will be deleted, and it will be as though you never signed in! If you make any modifications that restart the server, you will have to sign in all over again.
 
 If you get annoyed enough by this during your development process, we have a solution to store the sessions in MongoDB, instead of the server's local memory, in the level up section of this module.
 
-[Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-in-start)
+<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-in-start)
 
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-in-complete)
+[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-in-complete) -->

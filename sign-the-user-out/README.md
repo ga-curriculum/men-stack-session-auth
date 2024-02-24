@@ -1,8 +1,8 @@
 # ![MEN Stack Session Auth - Sign the User Out](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to implement user sign out in an express application.
+**Learning objective:** By the end of this lesson, students will be able to implement user sign out functionality by deleting a session.
 
-## Signing the User Out
+## Signing the user out
 
 Now that we're creating sessions when users sign in, we can simply delete those sessions when a user wants to sign out.
 
@@ -14,6 +14,7 @@ In `views/index.ejs`:
 <% if (user) { %>
 <h1>Welcome to the app, <%= user.username %>!</h1>
 <p>
+  <!-- new sign out link -->
   <a href="/auth/sign-out">Sign out</a>
 </p>
 <% } else { %>
@@ -24,11 +25,11 @@ In `views/index.ejs`:
 <% } %>
 ```
 
-## The Sign Out Controller Function
+## Define the route
 
-Our sign out link will send a GET request to `/auth/sign-out`, so we should prepare to accept that request in the auth controller. We can set up a minimal route with a `res.send` for testing purposes.
+The sign out link will send a `GET` request to `/auth/sign-out`, so we should prepare to accept that request in the auth controller. Let's set up a minimal route with a `res.send` for testing purposes.
 
-In `/controllers/auth.js`:
+Add the following to `/controllers/auth.js`:
 
 ```javascript
 router.get("/sign-out", (req, res) => {
@@ -36,9 +37,9 @@ router.get("/sign-out", (req, res) => {
 });
 ```
 
-Now, we want to get rid of the session attached to the `req` object. Lucky for us, there's a built-in method to the express session object conveniently named `destroy`, allowing us to easily delete the session using `req.session.destroy()`. Nice!
+To sign a user out, we need to get rid of the session attached to the `req` object. Lucky for us, the express session object has a built-in method conveniently named `destroy`, allowing us to easily delete the session using `req.session.destroy()`. Nice!
 
-After that, most applications will redirect the user back to the landing page, so let's do just that.
+After signing out, most applications will redirect the user back to the landing page, so let's do just that.
 
 The final controller method should look like this:
 
@@ -51,8 +52,8 @@ router.get("/sign-out", (req, res) => {
 
 ## Testing the Sign Out Functionality
 
-That's all there is to it! We should be able to manually test the application by signing in, seeing our username on the landing page, and clicking the sign out link to be returned to the landing page as an anonymous guest. You can validate this by seeing whether the sign in and sign up links are present.
+That's all there is to it! We should be able to manually test the application by signing in, seeing our username on the landing page, and clicking the sign out link to be returned to the landing page as an anonymous guest. You can also validate this by seeing whether the sign in and sign up links are present.
 
-[Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-out-start)
+<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-out-start)
 
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-out-complete)
+[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-out-complete) -->

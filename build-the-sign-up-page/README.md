@@ -4,7 +4,9 @@
 
 ## Create the Sign Up Page
 
-To begin our authentication journey, we will need to be able to create new user accounts. Let's start by creating the template with the form to be submitted for creating an account.
+To begin our authentication journey, we will need to be able to create new user accounts. Let's start by creating the template with the form for creating an new user.
+
+Create a new `auth` directory inside of `views`. This will hold views specific to our authentication routes. Within `views/auth/` create the `sign-up` template:
 
 ```bash
 mkdir views/auth
@@ -50,9 +52,11 @@ In `views/index.ejs`:
 <a href="/auth/sign-up">Sign up</a>
 ```
 
-## Creating the route
+## Defining the route
 
-Now that our authentication routes are going to be defined in a separate controller file, we can add the following to `controllers/auth.js`:
+Now that our authentication routes are defined in a separate controller file, our route handler function will look a little different.
+
+Add the following to `controllers/auth.js`:
 
 ```javascript
 router.get("/sign-up", (req, res) => {
@@ -68,6 +72,6 @@ To test the route, visit `localhost:3000/auth/sign-up` in your browser. The `ser
 
 You should see the form rendered in the browser.
 
-[Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-start)
+<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-start)
 
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-complete)
+[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-complete) -->
