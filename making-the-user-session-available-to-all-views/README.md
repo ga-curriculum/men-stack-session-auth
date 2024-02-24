@@ -1,5 +1,7 @@
 # ![MEN Stack Session Auth - Level Up - Making the User Session Available to All Views](./assets/hero.png)
 
+**Learning objective:** By the end of this lesson, students will have the skills to make user session information universally accessible to all views in an Express application
+
 ## The magic of `res.locals`
 
 In our web application, it's not just the protected routes that might need access to the signed-in user's information. Consider a common feature like a navbar, which typically changes its display based on the user's authentication status – showing a 'sign-in' button for guests and a 'sign-out' button for logged-in users. To make this work, **every template** in our application needs access to the user information stored in the session.

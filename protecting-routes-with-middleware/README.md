@@ -1,5 +1,7 @@
 # ![MEN Stack Session Auth - Level Up - Protecting Routes with Middleware](./assets/hero.png)
 
+**Learning objective:** By the end of this lesson, students will be able to develop and integrate custom middleware in an Express application to protect specific routes.
+
 ## The three parameters of custom middleware
 
 When writing a custom middleware function, recall that we want three parameters instead of the usual two parameters our route handlers have been using:

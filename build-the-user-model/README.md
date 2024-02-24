@@ -11,7 +11,7 @@ mkdir models
 touch models/user.js
 ```
 
-## The User Model
+## The `User` model
 
 Applications vary in their implementation of the user model. Some rely on an `email` field, others simply have a `username` as a way to identify and differentiate users. To keep things simple, we'll use `username` and `password` for our two fields. For authentication to work properly, we need both fields to be required in the user schema.
 

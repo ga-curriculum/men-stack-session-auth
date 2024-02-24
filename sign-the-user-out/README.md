@@ -50,7 +50,7 @@ router.get("/sign-out", (req, res) => {
 });
 ```
 
-## Testing the Sign Out Functionality
+## Testing the sign out functionality
 
 That's all there is to it! We should be able to manually test the application by signing in, seeing our username on the landing page, and clicking the sign out link to be returned to the landing page as an anonymous guest. You can also validate this by seeing whether the sign in and sign up links are present.
 

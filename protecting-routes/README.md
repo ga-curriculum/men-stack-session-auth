@@ -2,13 +2,13 @@
 
 **Learning objective:** By the end of this lesson, students will be able to implement controller logic to protect a route using session authentication.
 
-## Protecting Routes
+## Protecting routes
 
 In many web applications, you aren't able to see any of the good stuff until you're a logged in user. Most sites also don't want to allow you to create things in their database as an unauthenticated user, so they'll prevent you from ever reaching a form to do so. We can refer to this concept as **protecting routes** from unauthenticated users.
 
 There are many ways to implement this concept, and for our application, we'll stick with the most straightforward approach of using an `if` check to determine if there's a user attached to a given request.
 
-## The VIP Lounge
+## The VIP lounge
 
 To practice this concept, we'll add a special route just for signed in users to access: the VIP Lounge. We'll present this link to every user on the landing page, but if you're not signed in, the controller function will send you a discouraging message rejecting you from the club. If you **are** signed in, we'll give the user a simple `res.send` message greeting them to the VIP lounge: no need to over-complicate this example.
 

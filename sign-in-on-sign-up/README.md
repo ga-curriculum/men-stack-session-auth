@@ -1,5 +1,7 @@
 # ![MEN Stack Session Auth - Level Up - Sign In on Sign Up](./assets/hero.png)
 
+**Learning objective:** By the end of this lesson, students will be able to implement an automatic sign-in feature during the account creation process in an Express application. 
+
 ## Sign 'em up, sign 'em in!
 
 A typical user flow for most applications will automatically sign a new user in right after they've created a new account. This makes sense, considering you've just gotten all the same details from the user that they'd need to sign in, and it's kind of redundant to make them go back and fill out a nearly identical form to sign in right after they've signed up.

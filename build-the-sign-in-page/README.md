@@ -2,7 +2,7 @@
 
 **Learning objective:** By the end of this lesson, students will be able to create a page with a form for users to sign in.
 
-## Creating the Sign In template
+## Creating the sign in template
 
 Now that users have the ability to sign up for an account, the next step is to create a form for them to sign ***in*** to the application. This sign-in form will closely resemble the sign-up page, but with a few key differences: we'll omit the `confirmPassword` field, and the form's `action` attribute will direct to a different URL.
 

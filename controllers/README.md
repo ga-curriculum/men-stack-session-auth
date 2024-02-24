@@ -1,6 +1,6 @@
 # ![MEN Stack Session Auth - Controllers](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to create a controller file to import routes into an express server file.
+**Learning objective:** By the end of this lesson, students will be able to create and integrate a controller for auth routes in an Express server.
 
 ## Create controllers
 

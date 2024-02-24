@@ -157,7 +157,7 @@ router.post("/sign-in", async (req, res) => {
 });
 ```
 
-## Modify the Landing page and `index` route
+## Modify the landing page and `index` route
 
 To test the functionality of user sign-in, we need to update our landing page to reflect the user's sign-in status. This is done by utilizing the `req.session` object, which is now attached to every request due to our `session` middleware.
 
@@ -193,7 +193,7 @@ Then, we can add some logic to the `index.ejs` template, like so:
 <% } %>
 ```
 
-## Testing sign in
+## Test sign in
 
 You should now be able to test all of this functionality through the application directly. Failed sign in attempts should simply result in a message shown in the browser, and require you to navigate back to the sign in page. A successful sign in should result in seeing the landing page again, with a personalized greeting.
 

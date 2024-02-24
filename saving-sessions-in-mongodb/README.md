@@ -1,5 +1,7 @@
 # ![MEN Stack Session Auth - Level Up - Saving Sessions in MongoDB](./assets/hero.png)
 
+**Learning objective:** By the end of this lesson, students will be able to integrate MongoDB for session storage in an Express application.
+
 ## Saving Sessions in MongoDB
 
 You're probably here because it's quickly become very annoying to lose your session every time the server restarts, and testing your express app has become an endless struggle of signing in before being able to do anything. Storing anything in the internal memory of the server is not ideal, so let's fix that by using an npm package that stores our session data in MongoDB.

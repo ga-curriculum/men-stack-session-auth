@@ -2,7 +2,7 @@
 
 **Learning objective:** By the end of this lesson, students will be able to create a sign up page with a form allowing the creation of new users.
 
-## Create the Sign Up Page
+## Create the sign up page
 
 To begin our authentication journey, we will need to be able to create new user accounts. Let's start by creating the template with the form for creating an new user.
 
@@ -42,7 +42,7 @@ Note the use of `type="password"` on our password input. This results in the cla
 
 We've also set up a `confirmPassword` field to ensure users aren't the victims of typos when creating their new account. These fields will have to match before we create their account, and we'll be checking for that, among other things, in the controller file!
 
-## Adding a Navigation Link to the Landing Page
+## Adding a navigation link to the landing page
 
 This is a good time to add a simple link to our landing page so a new user can directly navigate to the sign up page:
 
@@ -66,7 +66,7 @@ router.get("/sign-up", (req, res) => {
 
 Remember, we're using a `router` object defined by express instead of the `app` object we're used to, so all the routes should be defined with `router` instead of `app`.
 
-## Test the Route
+## Test the route
 
 To test the route, visit `localhost:3000/auth/sign-up` in your browser. The `server.js` file handles the `/auth` section of the url, and the `sign-up` is handled by the controller function we just wrote!
 
