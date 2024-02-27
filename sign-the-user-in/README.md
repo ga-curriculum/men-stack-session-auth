@@ -51,17 +51,28 @@ If the route handler function has gotten this far, it means we have a successful
 
 There are various methods to manage signed-in users in applications. For ours, we've chosen to implement a ***session-based*** authentication strategy.
 
-![tktk Hunter a overview of this process visually could be great](#)
 
 Let's talk about `cookies`, which are central to this approach. `Cookies` are small pieces of data stored on your browser. You've likely encountered numerous websites asking if you're okay with them using `cookies`. Originally, these were widely employed by advertisers to track your activity across the internet and even shared across companies in a vast conspiracy of targeted ads.
 
 But `cookies` have their good sides too. They're what allow e-commerce sites to remember what’s in your shopping cart, even if you accidentally close the tab or browse away.
 
+![Shopping cart data](./assets/cookie-cart.png)
+
 Now, the catch with `cookies` is that they reside in the browser, making everything in them accessible to the user. That's why we cant store sensitive data like passwords in `cookies` — the front-end isn't secure.
 
 In our **session-based** strategy, however, we use `cookies` differently. They'll hold encrypted information about the signed-in user, which only our server can decrypt. This encrypted information forms a `session`.
 
-When a user signs into our application, they start a `session` that marks them as authenticated. Future requests from this user will carry this `session` in their browser cookie. Our server reads this `session` to verify if the request is from a signed-in user and, if so, identify who that user is.
+When a user signs into our application, they start a `session` that marks them as authenticated. 
+
+![Login](./assets/login.png)
+
+Future requests from this user will carry this `session` in their browser cookie. Our server reads this `session` to verify if the request is from a signed-in user and, if so, identify who that user is.
+
+![Session browser cookie](./assets/req-with-session.png)
+
+If a request is made to a protected route without this `session`, the server responds with an error message.
+
+![Access denied](./assets/access-denied.png)
 
 ## Setting up sessions in our server
 
