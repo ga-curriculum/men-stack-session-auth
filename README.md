@@ -1,4 +1,4 @@
-# ![MEN Stack Session Auth](./assets/tktk-hero.png)
+# ![MEN Stack Session Auth](./assets/hero.png)
 
 ## About
 

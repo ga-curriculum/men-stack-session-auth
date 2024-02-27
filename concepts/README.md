@@ -1,4 +1,4 @@
-# ![Mongoose, Express, EJS, and Session-Auth - Concepts](./assets/tktkhero.png)
+# ![MEN Stack Session Auth - Concepts](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will have a clear understanding of the role and importance of authentication in full-stack development. 
 
