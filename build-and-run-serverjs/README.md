@@ -9,7 +9,7 @@ Let's begin with the same boilerplate Express code and libraries we've come to k
 Install packages:
 
 ```bash
-npm i express mongoose dotenv ejs morgan
+npm i express mongoose dotenv ejs morgan method-override
 ```
 
 Create your `.env` file at the root level of the repository and include your `MONGODB_URI` connection string variable.
