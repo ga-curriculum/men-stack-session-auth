@@ -97,8 +97,13 @@ This string can be anything you want.
 Every time a user accesses a route in our application, we'll likely need to perform actions related to their `session`, which sounds like a great case for middleware! 
 This middleware will automatically manage session data for each user request, ensuring a seamless and secure user experience throughout our application.
 
+Before you can use session management in your Express app, you need to include the express-session module. Add the following line at the top of your `server.js` file, right after your other require statements:
 
-Add the following to `server.js` at the bottom of our middleware stack:
+```js
+const session = require('express-session');
+```
+
+Then add the following in `server.js` at the bottom of our middleware stack:
 
 ```javascript
 app.use(methodOverride("_method"));
