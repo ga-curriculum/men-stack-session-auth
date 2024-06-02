@@ -13,7 +13,7 @@ Make a new repository on [GitHub](https://github.com/) named `men-stack-session-
 Clone a copy of your remote repo locally by using the `git clone` command:
 
 ```bash
-git clone https://git.generalassemb.ly/<your-username>/men-stack-session-auth.git
+git clone https://github.com/<your-username>/men-stack-session-auth.git
 ```
 
 > 🚨 Do not copy the above command. It will not work. Your GitHub username will replace <github-username> (including the < and >) in the URL above.
