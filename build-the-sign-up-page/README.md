@@ -68,7 +68,7 @@ Remember, we're using a `router` object defined by express instead of the `app` 
 
 ## Test the route
 
-To test the route, visit `localhost:3000/auth/sign-up` in your browser. The `server.js` file handles the `/auth` section of the url, and the `sign-up` is handled by the controller function we just wrote!
+To test the route, visit `localhost:3000/auth/sign-up` in your browser. The `server.js` file handles the `/auth` section of the URL, and the `sign-up` is handled by the controller function we just wrote!
 
 You should see the form rendered in the browser.
 

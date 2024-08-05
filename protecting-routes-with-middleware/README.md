@@ -58,7 +58,7 @@ module.exports = isSignedIn;
 
 This function checks if `req.session.user` exists, and if it does, it allows the request to continue on the normal chain by invoking `next()` and returning. If this check fails, however, it moves to redirect the user to the sign-in page, strongly suggesting to the user that, to get where they want to go, they'll have to sign in.
 
-An extreme bonus challenge for you might be to use session, or query parameters, to store the url they were **trying** to get to, and changing the sign-in flow to redirect them back to that route once they've finished signing in. You may have seen this in url bar of many real world applications: `?redirectURL=profile`, for example.
+An extreme bonus challenge for you might be to use session, or query parameters, to store the URL they were **trying** to get to, and changing the sign-in flow to redirect them back to that route once they've finished signing in. You may have seen this in URL bar of many real world applications: `?redirectURL=profile`, for example.
 
 ## Plugging in the Middleware
 
