@@ -40,9 +40,9 @@ To do this, add the following line in `server.js`, just below where we've define
 app.use("/auth", authController);
 ```
 
-With this code in place, Express will now funnel any requests starting with `/auth` to the `authController`. The `authController` is essentially a set of routes defined in `authController.js`, managed by the `router` object. 
+With this code in place, Express will now funnel any requests starting with `/auth` to the `authController`. The `authController` is essentially a set of routes defined in `auth.js`, managed by the `router` object. 
 
-For each of these routes, the URL path handled by the `authController` will already have `/auth` as its base. Therefore, within the `authController.js` file, we only need to specify the remaining part of the URL path, excluding `/auth`, for each route.
+For each of these routes, the URL path handled by the `authController` will already have `/auth` as its base. Therefore, within the `auth.js` file, we only need to specify the remaining part of the URL path, excluding `/auth`, for each route.
 
 For example, the controller route for `/auth/sign-up` in the `authController` will look like this:
 
