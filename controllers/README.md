@@ -48,7 +48,7 @@ For example, the controller route for `/auth/sign-up` in the `authController` wi
 
 ```javascript
 router.get("/sign-up", (req, res) => {
-  res.render("sign-up.ejs");
+  res.render("auth/sign-up.ejs");
 });
 ```
 
