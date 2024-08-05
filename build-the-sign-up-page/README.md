@@ -40,7 +40,7 @@ This template will have a simple form, like so:
 
 Note the use of `type="password"` on our password input. This results in the classic hidden text, replaced by dots, that all password inputs should have across all applications.
 
-We've also set up a `confirmPassword` field to ensure users aren't the victims of typos when creating their new account. These fields will have to match before we create their account, and we'll be checking for that, among other things, in the controller file!
+We've also set up a `confirmPassword` field to ensure users aren't the victims of typos when creating their new account. These fields must match before we create their account. We'll check for that, among other things, in the controller function!
 
 ## Adding a navigation link to the landing page
 
