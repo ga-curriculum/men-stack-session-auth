@@ -16,7 +16,7 @@ Clone a copy of your remote repo locally by using the `git clone` command:
 git clone https://github.com/<your-username>/men-stack-session-auth.git
 ```
 
-> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace <github-username> (including the < and >) in the URL above.
+> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the < and >) in the URL above.
 
 Next, `cd` into your new cloned directory, `men-stack-session-auth`:
 
