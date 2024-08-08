@@ -167,6 +167,7 @@ router.post("/sign-in", async (req, res) => {
   // If there is other data you want to save to `req.session.user`, do so here!
   req.session.user = {
     username: userInDatabase.username,
+    _id: userInDatabase._id
   };
 
   res.redirect("/");
