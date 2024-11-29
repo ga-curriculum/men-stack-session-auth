@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Protecting Routes](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Protecting Routes</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to implement controller logic to protect a route using session authentication.
 

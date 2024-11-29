@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Level Up - Saving Sessions in MongoDB](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Saving Sessions in Mongodb</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to integrate MongoDB for session storage in an Express application.
 

@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Build and Run server.js](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Build and Run <code>server.js</code></span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to set up and run an Express server integrated with MongoDB, use environment variables for configuration, and include the proper middleware stack to process form requests.
 

@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Controllers](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Controllers</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to create and integrate a controller for auth routes in an Express server.
 

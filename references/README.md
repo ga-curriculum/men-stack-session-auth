@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - References](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">References</span>
+</h1>
 
 ## Lesson references
 

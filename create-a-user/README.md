@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Create a User](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Create a <code>User</code></span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to create a new user account through the sign up route.
 

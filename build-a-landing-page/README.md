@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Build a Landing Page](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Build a Landing Page</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to build an Express route that renders a landing page for an application.
 

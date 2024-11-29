@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Sign the User In](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Sign the <code>User</code> In</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to implement sign in functionality with sessions in a sign in route.
 

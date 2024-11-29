@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Level Up - Protecting Routes with Middleware](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Protecting Routes with Middleware</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to develop and integrate custom middleware in an Express application to protect specific routes.
 

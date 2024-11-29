@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Recap](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Recap</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to articulate the process of session authentication in an express application.
 

@@ -1,4 +1,7 @@
-# ![MEN Stack Session Auth - Level Up - Making the User Session Available to All Views](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Session Auth</span>
+  <span class="subhead">Making the <code>User</code> Session Available to All Views</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will have the skills to make user session information universally accessible to all views in an Express application
 
