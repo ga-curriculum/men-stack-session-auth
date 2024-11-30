@@ -1,6 +1,6 @@
 <h1>
   <span class="headline">MEN Stack Session Auth</span>
-  <span class="subhead">Build the Sign up Page</span>
+  <span class="subhead">Build the Sign Up Page</span>
 </h1>
 
 **Learning objective:** By the end of this lesson, students will be able to create a sign up page with a form allowing the creation of new users.

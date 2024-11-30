@@ -1,6 +1,6 @@
 <h1>
   <span class="headline">MEN Stack Session Auth</span>
-  <span class="subhead">Sign the <code>User</code> In</span>
+  <span class="subhead">Sign Users In</span>
 </h1>
 
 **Learning objective:** By the end of this lesson, students will be able to implement sign in functionality with sessions in a sign in route.
@@ -89,7 +89,7 @@ Since we're encrypting and decrypting information from a `session` object, we'll
 
 Add a `SESSION_SECRET` variable to your `.env` file:
 
-```
+```plaintext
 SESSION_SECRET=secret-string-unique-to-your-app
 ```
 

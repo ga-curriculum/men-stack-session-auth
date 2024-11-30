@@ -1,6 +1,6 @@
 <h1>
   <span class="headline">MEN Stack Session Auth</span>
-  <span class="subhead">Sign the <code>User</code> Out</span>
+  <span class="subhead">Sign Users Out</span>
 </h1>
 
 **Learning objective:** By the end of this lesson, students will be able to implement user sign out functionality by deleting a session.

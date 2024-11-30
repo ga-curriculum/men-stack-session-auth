@@ -40,7 +40,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Build and Run Serverjs",
+          "friendlyName": "Build and Run <code class='filepath'>server.js</code>",
           "dirName": "build-and-run-serverjs",
           "type": "Content",
           "skill": "",
@@ -60,7 +60,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Build the User Model",
+          "friendlyName": "Build the <code>User</code> Model",
           "dirName": "build-the-user-model",
           "type": "Content",
           "skill": "",
@@ -110,8 +110,8 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Sign the User In",
-          "dirName": "sign-the-user-in",
+          "friendlyName": "Sign Users In",
+          "dirName": "sign-users-in",
           "type": "Content",
           "skill": "",
           "learningObjective": "",
@@ -120,8 +120,8 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Sign the User Out",
-          "dirName": "sign-the-user-out",
+          "friendlyName": "Sign Users Out",
+          "dirName": "sign-users-out",
           "type": "Content",
           "skill": "",
           "learningObjective": "",
@@ -150,7 +150,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Saving Sessions in Mongodb",
+          "friendlyName": "Saving Sessions in MongoDB",
           "dirName": "saving-sessions-in-mongodb",
           "type": "Content",
           "skill": "",
@@ -180,8 +180,8 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Making the User Session Available to All Views",
-          "dirName": "making-the-user-session-available-to-all-views",
+          "friendlyName": "Make the <code>User</code> Session Available to All Views",
+          "dirName": "make-the-user-session-available-to-all-views",
           "type": "Content",
           "skill": "",
           "learningObjective": "",
@@ -239,7 +239,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Build and Run Serverjs",
+          "friendlyName": "Build and Run <code class='filepath'>server.js</code>",
           "dirName": "build-and-run-serverjs",
           "type": "Content",
           "skill": "",
@@ -259,7 +259,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Build the User Model",
+          "friendlyName": "Build the <code>User</code> Model",
           "dirName": "build-the-user-model",
           "type": "Content",
           "skill": "",
@@ -309,8 +309,8 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Sign the User In",
-          "dirName": "sign-the-user-in",
+          "friendlyName": "Sign Users In",
+          "dirName": "sign-users-in",
           "type": "Content",
           "skill": "",
           "learningObjective": "",
@@ -319,8 +319,8 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Sign the User Out",
-          "dirName": "sign-the-user-out",
+          "friendlyName": "Sign Users Out",
+          "dirName": "sign-users-out",
           "type": "Content",
           "skill": "",
           "learningObjective": "",
@@ -349,7 +349,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Saving Sessions in Mongodb",
+          "friendlyName": "Saving Sessions in MongoDB",
           "dirName": "saving-sessions-in-mongodb",
           "type": "Level Up content",
           "skill": "",
@@ -379,8 +379,8 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Making the User Session Available to All Views",
-          "dirName": "making-the-user-session-available-to-all-views",
+          "friendlyName": "Make the <code>User</code> Session Available to All Views",
+          "dirName": "make-the-user-session-available-to-all-views",
           "type": "Level Up content",
           "skill": "",
           "learningObjective": "",

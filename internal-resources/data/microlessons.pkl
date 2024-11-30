@@ -17,7 +17,7 @@ concepts = new Template.Microlesson {
 }
 
 buildAndRunServerjs = new Template.Microlesson {
-  friendlyName = "Build and Run Serverjs"
+  friendlyName = "Build and Run <code class='filepath'>server.js</code>"
   dirName = "build-and-run-serverjs"
   type = "Content"
   videoUrl = ""
@@ -31,7 +31,7 @@ buildALandingPage = new Template.Microlesson {
 }
 
 buildTheUserModel = new Template.Microlesson {
-  friendlyName = "Build the User Model"
+  friendlyName = "Build the <code>User</code> Model"
   dirName = "build-the-user-model"
   type = "Content"
   videoUrl = ""
@@ -65,16 +65,16 @@ buildTheSignInPage = new Template.Microlesson {
   videoUrl = ""
 }
 
-signTheUserIn = new Template.Microlesson {
-  friendlyName = "Sign the User In"
-  dirName = "sign-the-user-in"
+signUsersIn = new Template.Microlesson {
+  friendlyName = "Sign Users In"
+  dirName = "sign-users-in"
   type = "Content"
   videoUrl = ""
 }
 
-signTheUserOut = new Template.Microlesson {
-  friendlyName = "Sign the User Out"
-  dirName = "sign-the-user-out"
+signUsersOut = new Template.Microlesson {
+  friendlyName = "Sign Users Out"
+  dirName = "sign-users-out"
   type = "Content"
   videoUrl = ""
 }
@@ -94,7 +94,7 @@ recap = new Template.Microlesson {
 }
 
 savingSessionsInMongodb = new Template.Microlesson {
-  friendlyName = "Saving Sessions in Mongodb"
+  friendlyName = "Saving Sessions in MongoDB"
   dirName = "saving-sessions-in-mongodb"
   type = "Content"
   videoUrl = ""
@@ -114,9 +114,9 @@ protectingRoutesWithMiddleware = new Template.Microlesson {
   videoUrl = ""
 }
 
-makingTheUserSessionAvailableToAllViews = new Template.Microlesson {
-  friendlyName = "Making the User Session Available to All Views"
-  dirName = "making-the-user-session-available-to-all-views"
+makeTheUserSessionAvailableToAllViews = new Template.Microlesson {
+  friendlyName = "Make the <code>User</code> Session Available to All Views"
+  dirName = "make-the-user-session-available-to-all-views"
   type = "Content"
   videoUrl = ""
 }

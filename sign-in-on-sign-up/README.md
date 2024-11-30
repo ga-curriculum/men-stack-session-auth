@@ -1,6 +1,6 @@
 <h1>
   <span class="headline">MEN Stack Session Auth</span>
-  <span class="subhead">Sign in on Sign Up</span>
+  <span class="subhead">Sign In on Sign Up</span>
 </h1>
 
 **Learning objective:** By the end of this lesson, students will be able to implement an automatic sign-in feature during the account creation process in an Express application. 

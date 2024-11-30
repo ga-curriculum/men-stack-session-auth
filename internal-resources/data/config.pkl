@@ -30,14 +30,14 @@ courses {
       mls.buildTheSignUpPage
       mls.createAUser
       mls.buildTheSignInPage
-      mls.signTheUserIn
-      mls.signTheUserOut
+      mls.signUsersIn
+      mls.signUsersOut
       mls.protectingRoutes
       mls.recap
       mls.savingSessionsInMongodb
       mls.signInOnSignUp
       mls.protectingRoutesWithMiddleware
-      mls.makingTheUserSessionAvailableToAllViews
+      mls.makeTheUserSessionAvailableToAllViews
     }
   }
   new {
@@ -52,8 +52,8 @@ courses {
       mls.buildTheSignUpPage
       mls.createAUser
       mls.buildTheSignInPage
-      mls.signTheUserIn
-      mls.signTheUserOut
+      mls.signUsersIn
+      mls.signUsersOut
       mls.protectingRoutes
       mls.recap
       (mls.savingSessionsInMongodb) {
@@ -65,7 +65,7 @@ courses {
       (mls.protectingRoutesWithMiddleware) {
         type = "Level Up content"
       }
-      (mls.makingTheUserSessionAvailableToAllViews) {
+      (mls.makeTheUserSessionAvailableToAllViews) {
         type = "Level Up content"
       }
     }

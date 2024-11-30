@@ -1,6 +1,6 @@
 <h1>
   <span class="headline">MEN Stack Session Auth</span>
-  <span class="subhead">Build the Sign in Page</span>
+  <span class="subhead">Build the Sign In Page</span>
 </h1>
 
 **Learning objective:** By the end of this lesson, students will be able to create a page with a form for users to sign in.
