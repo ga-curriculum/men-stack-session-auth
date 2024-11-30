@@ -45,7 +45,7 @@ controllers = new Template.Microlesson {
 }
 
 buildTheSignUpPage = new Template.Microlesson {
-  friendlyName = "Build the Sign up Page"
+  friendlyName = "Build the Sign Up Page"
   dirName = "build-the-sign-up-page"
   type = "Content"
   videoUrl = ""
@@ -59,7 +59,7 @@ createAUser = new Template.Microlesson {
 }
 
 buildTheSignInPage = new Template.Microlesson {
-  friendlyName = "Build the Sign in Page"
+  friendlyName = "Build the Sign In Page"
   dirName = "build-the-sign-in-page"
   type = "Content"
   videoUrl = ""
@@ -101,7 +101,7 @@ savingSessionsInMongodb = new Template.Microlesson {
 }
 
 signInOnSignUp = new Template.Microlesson {
-  friendlyName = "Sign in on Sign Up"
+  friendlyName = "Sign In on Sign Up"
   dirName = "sign-in-on-sign-up"
   type = "Content"
   videoUrl = ""
