@@ -80,7 +80,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Build the Sign up Page",
+          "friendlyName": "Build the Sign Up Page",
           "dirName": "build-the-sign-up-page",
           "type": "Content",
           "skill": "",
@@ -100,7 +100,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Build the Sign in Page",
+          "friendlyName": "Build the Sign In Page",
           "dirName": "build-the-sign-in-page",
           "type": "Content",
           "skill": "",
@@ -160,7 +160,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Sign in on Sign Up",
+          "friendlyName": "Sign In on Sign Up",
           "dirName": "sign-in-on-sign-up",
           "type": "Content",
           "skill": "",
@@ -279,7 +279,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Build the Sign up Page",
+          "friendlyName": "Build the Sign Up Page",
           "dirName": "build-the-sign-up-page",
           "type": "Content",
           "skill": "",
@@ -299,7 +299,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Build the Sign in Page",
+          "friendlyName": "Build the Sign In Page",
           "dirName": "build-the-sign-in-page",
           "type": "Content",
           "skill": "",
@@ -359,7 +359,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Sign in on Sign Up",
+          "friendlyName": "Sign In on Sign Up",
           "dirName": "sign-in-on-sign-up",
           "type": "Level Up content",
           "skill": "",
