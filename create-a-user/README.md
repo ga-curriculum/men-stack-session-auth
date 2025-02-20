@@ -12,7 +12,7 @@ For our form to make submissions to the server, we need to modify the `action` a
 Modify the following in `views/auth/sign-up.ejs`:
 
 ```html
-<form action="/auth/sign-up" method="POST"></form>
+<form action="/auth/sign-up" method="POST">
 ```
 
 ## Define the route
