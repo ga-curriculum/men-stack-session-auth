@@ -221,6 +221,3 @@ Note, however, that any time you restart the server, the version of the session 
 
 If you get annoyed enough by this during your development process, we have a solution to store the sessions in MongoDB, instead of the server's local memory, in the level up section of this module.
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-in-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-in-complete) -->

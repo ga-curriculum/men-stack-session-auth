@@ -92,7 +92,3 @@ Connected to MongoDB <mongoose-uri>.
 The express app is ready on port 3000!
 ```
 
-<!-- 
-[Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-and-run-serverjs-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-and-run-serverjs-complete) -->

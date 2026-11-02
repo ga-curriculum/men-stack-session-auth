@@ -91,6 +91,3 @@ app.get("/", (req, res) => {
 
 The user should still show up on this page thanks to our middleware! If you want to create a standard navbar with sign-in/sign-out buttons, now would be the time to do so. All templates will have access to a `user` variable you can create conditionals around.
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/making-user-available-to-all-views-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/making-user-available-to-all-views-complete) -->

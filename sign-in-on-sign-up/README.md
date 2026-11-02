@@ -29,6 +29,3 @@ If you haven't yet implemented saving sessions to MongoDB, the callback pattern 
 
 And that's it! You should now see that a newly created user will automatically be redirected to the landing page with a greeting for them, and they're properly signed in to the app.
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-in-on-sign-up-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-in-on-sign-up-complete) -->
