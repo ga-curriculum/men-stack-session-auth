@@ -108,6 +108,3 @@ res.send(`Thanks for signing up ${user.username}`);
 
 You should now be able to navigate to `localhost:3000/auth/sign-up` and create a new user account through the form. You can validate that the password was properly encrypted by viewing the user in MongoDB Atlas.
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/create-a-user-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/create-a-user-complete) -->

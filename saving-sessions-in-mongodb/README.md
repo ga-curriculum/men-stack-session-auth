@@ -82,6 +82,3 @@ req.session.destroy(() => {
 });
 ```
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/saving-sessions-in-MongoDB-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/saving-sessions-in-MongoDB-complete) -->

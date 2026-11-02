@@ -39,6 +39,3 @@ const User = mongoose.model("User", userSchema);
 module.exports = User;
 ```
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-user-model-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-user-model-complete) -->
