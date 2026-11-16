@@ -57,6 +57,3 @@ router.get("/sign-up", (req, res) => {
 
 The full URL to access that route from a browser would be `/auth/sign-up`.
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/controllers-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/controllers-complete) -->

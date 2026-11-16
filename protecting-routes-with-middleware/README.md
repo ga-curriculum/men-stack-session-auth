@@ -87,6 +87,3 @@ app.get("/vip-lounge", isSignedIn, (req, res) => {
 
 For future routes that require the user to be signed in, you can now simply import the middleware function we've created and plug it in the exact same way. Nice!
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/protecting-routes-with-middleware-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/protecting-routes-with-middleware-complete) -->

@@ -57,6 +57,3 @@ router.get("/sign-out", (req, res) => {
 
 That's all there is to it! We should be able to manually test the application by signing in, seeing our username on the landing page, and clicking the sign out link to be returned to the landing page as an anonymous guest. You can also validate this by seeing whether the sign in and sign up links are present.
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-out-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/sign-the-user-out-complete) -->

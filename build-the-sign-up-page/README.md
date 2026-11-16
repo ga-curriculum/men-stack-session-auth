@@ -75,6 +75,3 @@ To test the route, visit `localhost:3000/auth/sign-up` in your browser. The `ser
 
 You should see the form rendered in the browser.
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-up-page-complete) -->

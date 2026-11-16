@@ -46,7 +46,7 @@ This module covers critical areas including secure password storage, route prote
 
 ### Solution code
 
-🏁 [Solution code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template)
+🏁 [Solution code](https://github.com/ga-curriculum/men-stack-session-auth-template-v2)
 
 ### Course landing pages
 

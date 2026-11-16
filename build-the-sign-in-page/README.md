@@ -60,6 +60,3 @@ In `views/index.ejs`:
 
 Test the route by navigating from the landing page link.
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-in-page-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/build-the-sign-in-page-complete) -->

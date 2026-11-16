@@ -59,6 +59,3 @@ Many functions of protected routes are related to **authorization** in addition 
 
 Simply put, being a signed-in user doesn't give you total power over everything in an application, and we rely on the logic of protected routes to allow users to manage their specific resources, without letting them alter anyone else's.
 
-<!-- [Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/protecting-routes-start)
-
-[Complete Code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template/tree/protecting-routes-complete) -->
